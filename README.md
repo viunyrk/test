@@ -1,68 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Guidelines
+Submit the task on GIT.
 
-## Available Scripts
+Code should work on the latest version of Chrome.
 
-In the project directory, you can run:
+Stack: ES6/ES7, React, Redux, Jest, Enzyme, Sinon
 
-### `npm start`
+## Max time for the task - 1 hour
+Submit everything that you were able to implement within one hour. 
+We are not asking for low quality, fast code, but we are interested in understanding how you work by having you submit
+any part of this task you can complete within no more than 1 hour of work.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Task to implement
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Implement tests for the existing functionality. Tests should be written on Jest and Enzyme.
+You should mount the whole Messenger component and wrap it in the store Provider.
+You should use sinon to stub all api methods (obligatory) and use fake timers (if you need any)
 
-### `npm test`
+Test cases, that are required:
+1. On click on a lead in "Leads list" new DialogWindow is opened and the request for getting leadInfo has been sent with the correct leadId
+2. After the info about lead has been loaded, the request for getting leads texts history has been sent with the correct leadId
+3. Loader has been shown in DialogWindow while texts request is in pending state
+4. When texts are received, they are rendered in DialogWindow in the correct order
+5. When a user types something in input of DialogWindow and clicks Enter - the message has been added at the end of the list and has loader next to it
+6. On clicking on "-" the dialog is collapsed
+7. On clicking on "X" the dialog is closed
+8. On clicking on one more lead the second dialog is opened
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Additional task (should take 30 minutes)
+In the Messenger component uncomment this logic "window.Echo.private().notification(this.handleNewNotification);" and implement the correct mock or stub using sinon,
+that will allow to simulate push notifications for the status of newly sent message. Implement the test,
+that will simulate the notification about successful sending of the message - in this case the loader should disappear next to newly sent message.
+Take a look at "handleNewNotification" to better understand how to pass the data.
 
-### `npm run build`
+## Aim of the task
+We're providing much shorten version of the real module from the application to test how you're able to deal with the already implemented logic,
+understand it and test it. The code is not ideal - and it has been done also on purpose to see, how you can understand it.
+Tests implementation is not the major part of the work, but we believe that this skill requires good understanding of the functionality, so that if you
+can implement good tests, you will also be able to work efficiently on some new functionality.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Run the boilerplate
+    - npm install
+    - npm start
+    - npm test

@@ -1,0 +1,86 @@
+.ql-editor {
+  min-height: 200px; }
+
+.ql-placeholder .ql-picker-label {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .ql-placeholder .ql-picker-label .merge-field-placeholder {
+    margin-right: 20px; }
+
+.ql-picker-options {
+  max-height: 260px;
+  overflow: hidden;
+  overflow-y: auto; }
+
+.ql-snow .ql-out-bottom, .ql-snow .ql-out-top {
+  visibility: initial; }
+
+.ql-attachments {
+  visibility: hidden;
+  width: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 12px 15px; }
+  .ql-attachments--has-content {
+    visibility: initial;
+    border-top: 1px solid #E8E9E9; }
+  .ql-attachments__title {
+    width: 100%;
+    margin-bottom: 5px;
+    text-decoration: underline;
+    font-size: 12px; }
+  .ql-attachments__item {
+    margin-bottom: 0.28571428em !important; }
+    .ql-attachments__item.ui.label.small {
+      max-width: 290px;
+      min-width: 90px; }
+      .ql-attachments__item.ui.label.small a {
+        opacity: 1;
+        color: white;
+        display: inline-block;
+        width: -webkit-calc(100% - 20px);
+        width: calc(100% - 20px);
+        white-space: nowrap;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis; }
+      .ql-attachments__item.ui.label.small i.icon.delete {
+        position: relative;
+        bottom: 1px; }
+
+.aligner__overlay {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #777; }
+  .aligner__overlay button img {
+    width: 14px; }
+
+.editor-toolbar {
+  position: absolute;
+  font: 12px/1.0 Arial Helvetica sans-serif;
+  padding: 4px 8px;
+  text-align: center;
+  color: #333;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%; }
+
+.resizer {
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  background-color: white;
+  border: 1px solid #777;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  opacity: 0.8; }
+
