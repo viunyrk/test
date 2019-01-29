@@ -15,6 +15,7 @@ any part of this task you can complete within no more than 1 hour of work.
 Implement tests for the existing functionality. Tests should be written on Jest and Enzyme.
 You should mount the whole Messenger component and wrap it in the store Provider.
 You should use sinon to stub all api methods (obligatory) and use fake timers (if you need any)
+You're allowed to add any attributes to the elements in JSX, if you need it for convenient working with the tests.
 
 Test cases, that are required:
 1. On click on a lead in "Leads list" new DialogWindow is opened and the request for getting leadInfo has been sent with the correct leadId
