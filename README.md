@@ -27,7 +27,7 @@ Test cases, that are required:
 7. On clicking on "X" the dialog is closed
 8. On clicking on one more lead the second dialog is opened
 
-## Additional task (should take 30 minutes)
+## Bonus Task (Not required - please only do this if you find it interesting and have time to do it: should take about 30 minutes)
 In the Messenger component uncomment this logic "window.Echo.private().notification(this.handleNewNotification);" and implement the correct mock or stub using sinon,
 that will allow to simulate push notifications for the status of newly sent message. Implement the test,
 that will simulate the notification about successful sending of the message - in this case the loader should disappear next to newly sent message.
