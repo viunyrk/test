@@ -4,7 +4,7 @@ import DialogWindow from './DialogWindow'
 import CONST from '../utils/const'
 import { initDialogWindow, updateTextInDialog } from '../actions/messenger';
 
-const leads = [
+export const leads = [
   { leadId: 1, leadName: 'Lead Id1', phone: 2227778888 },
   { leadId: 2, leadName: 'Lead Id2', phone: 2227778882 },
   { leadId: 3, leadName: 'Lead Id3', phone: 2227778883 },
@@ -46,7 +46,13 @@ class Messenger extends PureComponent {
           <h2>Leads list</h2>
           <ul>
             {leads.map(lead => (
-              <li onClick={() => this.handleLeadClick(lead)}>{lead.leadName}</li>
+              <li
+                key={lead.leadId}
+                onClick={() => this.handleLeadClick(lead)}
+                data-test-lead={lead.leadId}
+              >
+                {lead.leadName}
+              </li>
             ))}
           </ul>
         </div>

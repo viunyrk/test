@@ -245,7 +245,7 @@ class DialogWindow extends PureComponent {
     return texts.map(({ date, body, isReply, isSending, isDelivered, reason }, index) => {
 
       return (
-        <div key={`${date}-${index}`}>
+        <div key={`${date}-${index}`} data-test-message={date}>
           <div className={`dialog-message ${isReply ? 'dialog-message--reply' : ''} flex-row`}>
             {isReply && (
               <a
@@ -267,7 +267,7 @@ class DialogWindow extends PureComponent {
             <div
               id={this.createTextDateUniqueName(date)}
               className={`dialog-message__message ${isReply ? 'dialog-message__message--reply' : ''} ${!isDelivered ? 'dialog-message__message--error' : ''}`}>
-              <pre>{body}</pre>
+              <pre data-test-message-container>{body}</pre>
             </div>
 
           </div>
@@ -300,6 +300,7 @@ class DialogWindow extends PureComponent {
       <ClickOutside onClickOutside={this.handleClickOutside} onClick={this.handleClickInside}>
         <div
           data-testid={`message-dialog-for-${leadId}`}
+          data-test-dialog={leadId}
           className={`content-box dialog-window ${isActive ? 'dialog-window--active' : ''} ${isCollapsed ? 'dialog-window--collapsed' : ''}`}
         >
           <Loader size='large' active={loading} className="dialog-window__loader" />
@@ -315,6 +316,7 @@ class DialogWindow extends PureComponent {
                 <span
                   data-view="collapsed"
                   onClick={this.setCollapsedDialogView}
+                  data-test-collapse
                   className="dialog-window__header-icon fas fa-minus">
                   -
                 </span>
@@ -322,6 +324,7 @@ class DialogWindow extends PureComponent {
               <span
                 data-view="hidden"
                 onClick={this.deleteDialog}
+                data-test-close
                 className="dialog-window__header-icon fas fa-times">
                 X
               </span>
@@ -331,12 +334,13 @@ class DialogWindow extends PureComponent {
             <div
               ref={messagesNode => this.messagesNode = messagesNode}
               className="dialog-window__messages"
+              data-test-message-container
             >
               {this.renderMessages(texts)}
             </div>
           )}
           {!isCollapsed && (
-            <div className="dialog-window__input-wrapper">
+            <div className="dialog-window__input-wrapper" data-test-input-container>
               {newMessageError && (
                 <ErrorLabel
                   className="dialog-window__input-wrapper-error-label"
